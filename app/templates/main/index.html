@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+    <div class="text-center">
+        <h1 class="text-5xl font-bold mb-6">
+            <i class="fas fa-lungs mr-4"></i>
+            Respiratory Disease Classification System
+        </h1>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Advanced AI-powered system for analyzing respiratory sounds and automatically classifying diseases using cutting-edge deep learning technology.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('main.dashboard') }}" class="btn btn-lg bg-white text-blue-600 hover:bg-gray-100">
+                <i class="fas fa-tachometer-alt mr-2"></i>
+                Go to Dashboard
+            </a>
+            {% else %}
+            <a href="{{ url_for('auth.login') }}" class="btn btn-lg bg-white text-blue-600 hover:bg-gray-100">
+                <i class="fas fa-sign-in-alt mr-2"></i>
+                Get Started
+            </a>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-blue-600">
+                <i class="fas fa-user-plus mr-2"></i>
+                Create Account
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Advanced Features</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our system provides comprehensive respiratory disease analysis with state-of-the-art machine learning models.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1: Audio Analysis -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-microphone text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Advanced Audio Analysis</h3>
+                <p class="text-gray-600">
+                    Process respiratory audio recordings with sophisticated signal processing algorithms for optimal feature extraction.
+                </p>
+            </div>
+            
+            <!-- Feature 2: AI Models -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-brain text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Triple AI Model Architecture</h3>
+                <p class="text-gray-600">
+                    CNN, LSTM, and Hybrid models working together to provide accurate disease classification with confidence scores.
+                </p>
+            </div>
+            
+            <!-- Feature 3: Disease Classification -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-stethoscope text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Comprehensive Disease Detection</h3>
+                <p class="text-gray-600">
+                    Detect and classify multiple respiratory conditions including asthma, pneumonia, bronchitis, COPD, and more.
+                </p>
+            </div>
+            
+            <!-- Feature 4: Patient Management -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-users text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Patient Management System</h3>
+                <p class="text-gray-600">
+                    Comprehensive patient records with medical history, symptoms, and treatment tracking capabilities.
+                </p>
+            </div>
+            
+            <!-- Feature 5: Clinical Reports -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-file-medical text-2xl text-red-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Clinical Decision Support</h3>
+                <p class="text-gray-600">
+                    Generate detailed clinical reports with confidence scores, risk assessments, and treatment recommendations.
+                </p>
+            </div>
+            
+            <!-- Feature 6: Analytics -->
+            <div class="card text-center p-8">
+                <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-chart-line text-2xl text-indigo-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Advanced Analytics</h3>
+                <p class="text-gray-600">
+                    Interactive visualizations, performance metrics, and population-level analytics for research and quality improvement.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our system follows a comprehensive workflow from audio recording to clinical diagnosis.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    1
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Audio Recording</h3>
+                <p class="text-gray-600">
+                    Record respiratory sounds using digital stethoscope or high-quality microphone
+                </p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    2
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Signal Processing</h3>
+                <p class="text-gray-600">
+                    Advanced audio preprocessing including noise reduction and feature extraction
+                </p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    3
+                </div>
+                <h3 class="text-lg font-semibold mb-2">AI Analysis</h3>
+                <p class="text-gray-600">
+                    Triple model analysis using CNN, LSTM, and Hybrid architectures
+                </p>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    4
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Clinical Report</h3>
+                <p class="text-gray-600">
+                    Comprehensive diagnosis with confidence scores and treatment recommendations
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Disease Classes Section -->
+<div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Supported Disease Classes</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our system can detect and classify a wide range of respiratory conditions.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-heart text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Healthy</h3>
+                </div>
+                <p class="text-gray-600">Normal respiratory patterns with no abnormalities detected.</p>
+            </div>
+            
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-wind text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Asthma</h3>
+                </div>
+                <p class="text-gray-600">Chronic inflammatory airway disease with reversible bronchospasm.</p>
+            </div>
+            
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-lungs text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Pneumonia</h3>
+                </div>
+                <p class="text-gray-600">Infection of the lungs causing inflammation and fluid accumulation.</p>
+            </div>
+            
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-cough text-orange-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Bronchitis</h3>
+                </div>
+                <p class="text-gray-600">Inflammation of the bronchial tubes with excessive mucus production.</p>
+            </div>
+            
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-smoking text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">COPD</h3>
+                </div>
+                <p class="text-gray-600">Chronic obstructive pulmonary disease with airflow limitation.</p>
+            </div>
+            
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-tint text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Pleural Effusion</h3>
+                </div>
+                <p class="text-gray-600">Accumulation of fluid between the lungs and chest wall.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="py-16 bg-blue-600 text-white">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+        <p class="text-xl mb-8">
+            Join healthcare professionals worldwide in revolutionizing respiratory disease diagnosis with AI-powered technology.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('main.dashboard') }}" class="btn btn-lg bg-white text-blue-600 hover:bg-gray-100">
+                <i class="fas fa-tachometer-alt mr-2"></i>
+                Access Dashboard
+            </a>
+            {% else %}
+            <a href="{{ url_for('auth.register') }}" class="btn btn-lg bg-white text-blue-600 hover:bg-gray-100">
+                <i class="fas fa-user-plus mr-2"></i>
+                Create Free Account
+            </a>
+            <a href="{{ url_for('auth.login') }}" class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-blue-600">
+                <i class="fas fa-sign-in-alt mr-2"></i>
+                Sign In
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

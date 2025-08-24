@@ -1,0 +1,68 @@
+# Core Flask Framework
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-Migrate==4.0.5
+Flask-Login==0.6.3
+Flask-WTF==1.1.1
+Flask-CORS==4.0.0
+Flask-Limiter==3.5.0
+
+# Database
+SQLAlchemy==2.0.21
+psycopg2-binary==2.9.7
+alembic==1.12.0
+
+# Authentication & Security
+PyJWT==2.8.0
+bcrypt==4.0.1
+cryptography==41.0.4
+
+# Machine Learning & Audio Processing
+tensorflow==2.13.0
+keras==2.13.1
+librosa==0.10.1
+scipy==1.11.1
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+python-speech-features==0.6
+soundfile==0.12.1
+pydub==0.25.1
+
+# Data Visualization & Analysis
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+bokeh==3.2.2
+
+# Web Development
+Werkzeug==2.3.7
+Jinja2==3.1.2
+WTForms==3.0.1
+email-validator==2.0.0
+
+# File Processing
+Pillow==10.0.0
+python-magic==0.4.27
+ffmpeg-python==0.2.0
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+gunicorn==21.2.0
+redis==4.6.0
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+pytest-mock==3.11.1
+factory-boy==3.3.0
+
+# Development
+black==23.7.0
+flake8==6.0.0
+isort==5.12.0
+pre-commit==3.3.3
+
+# Production
+supervisor==4.2.5
